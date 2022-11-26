@@ -46,7 +46,7 @@ class Graph {
         //the sink cannot be reached by the currently present paths via the source.
         return 0;
     }
-    int fordFulkerson(int[][] capacityGraph, int source, int sink){
+    int findMaxFlow(int[][] capacityGraph, int source, int sink){
         //A residual edge graph is created from the same possible dimensions as the main graph
         int[][] residual = capacityGraph.clone(); //Initialize residual graph to be equivalent to capacity graph
         int[] path = new int[numVertices]; //Creates possible path array, for later possible use
@@ -85,7 +85,7 @@ public class HomeWork8 {
         int source = 0;
         int sink = 5;
         double timeStart = System.nanoTime();
-        int test = graph.fordFulkerson(edgeMatrix, source, sink);
+        int test = graph.findMaxFlow(edgeMatrix, source, sink);
         double timeEnd = System.nanoTime();
         double totalTime = timeEnd - timeStart;
         System.out.printf("The max flow is: %d%n", test);
